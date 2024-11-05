@@ -49,4 +49,3 @@ const f = function(){
     console.log("Hello");
 }
 console.log(typeof f);
-
