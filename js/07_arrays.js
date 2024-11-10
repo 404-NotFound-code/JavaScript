@@ -33,3 +33,27 @@ console.log("B ", myArr);
 const myn2 = myArr.splice(1, 3); // splice change original array
 console.log("C ", myArr);
 console.log(myn2);
+
+const marvel_heroes = ['spiderman', 'ironman', 'captain america'];
+const dc_heroes = ['superman', 'batman', 'wonder women'];
+
+marvel_heroes.push(dc_heroes);
+console.log(marvel_heroes); // ['spiderman', 'ironman', 'captain america', ['superman', 'batman', 'wonder women']]
+console.log(marvel_heroes[3][1]); // batman
+
+const all_heroes = marvel_heroes.concat(dc_heroes);
+console.log(all_heroes); // ['spiderman', 'ironman', 'captain america', 'superman', 'batman', 'wonder women']
+
+const all_new_heroes = [...marvel_heroes, ...dc_heroes]; // using spread 
+console.log(all_new_heroes);
+
+const list = [1,2,3,[4,5,6],7,[6,7,[4,5]]];
+const newList = list.flat(Infinity);
+console.log(newList);
+
+console.log(Array.isArray("Javascript")); // returns a boolean value
+console.log(Array.from("JavaScript")); // returns an array associated string character
+console.log(Array.from({language: 'Javascript'})); // []; interesting part
+
+let score1 = 100, score2 = 200, score3 = 300;
+console.log(Array.of(score1, score2, score3)); // [ 100, 200, 300 ]
