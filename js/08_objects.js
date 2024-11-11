@@ -92,3 +92,27 @@ console.log(Object.keys(tinderUser)); // returns an array; // [ 'id', 'name', 'i
 console.log(Object.values(tinderUser)); // returns an array; // [ '123abc', 'Hello', false ]
 console.log(Object.entries(tinderUser)); // returns an array; // [ [ 'id', '123abc' ], [ 'name', 'Hello' ], [ 'isLogIn', false ] ]
 console.log(tinderUser.hasOwnProperty('isLogIn')); // true
+
+// 
+const course = {
+    coursename: 'Ultimate js program',
+    price: 999,
+    courseInstructor: 'Hitesh'
+}
+
+// Distructuring 
+// course.courseInstructor
+const {courseInstructor: inst} = course;
+// console.log(courseInstructor); // Hitesh
+console.log(inst); // Hitesh
+
+// In React
+// const navbar = ({company}) =>{
+//     // code...
+// }
+// navbar(company = 'pw')
+
+// json api
+// https://api.github.com/users/hiteshchoudhary
+// google = random user me api 
+// tools = json formatter 

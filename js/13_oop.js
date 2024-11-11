@@ -139,4 +139,5 @@ class Person{
 let PersonObj = new Person(400, 500);
 console.log(PersonObj.addTwo()); 
 
+// Getter and setter
 
