@@ -62,3 +62,4 @@ function returnThirdValue(getArr){
 console.log(returnThirdValue(newArr)); // 300
 console.log(returnThirdValue([1000, 20000])); // undefined 
 console.log(returnThirdValue([299, 344, 511, 233])); // 511
+
