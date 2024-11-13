@@ -140,63 +140,115 @@
 // console.log(PersonObj.addTwo()); 
 
 // Getter and setter(specialized method)
-class Product{
-    set setPrice(value){ // Setter = set a property with value
-        this.price = value;
-    }
+// class Product{
+//     set setPrice(value){ // Setter = set a property with value
+//         this.price = value;
+//     }
 
-    get getPrice(){ // Getter = get the setter property value
-        return this.price;
-    }
-}
+//     get getPrice(){ // Getter = get the setter property value
+//         return this.price;
+//     }
+// }
 
-let productObj = new Product();
-console.log(productObj); // Product {}
+// let productObj = new Product();
+// console.log(productObj); // Product {}
 
-productObj.setPrice = 100;
-console.log(productObj); // Product { price: 100 }
-console.log(productObj.getPrice); // 100
+// productObj.setPrice = 100;
+// console.log(productObj); // Product { price: 100 }
+// console.log(productObj.getPrice); // 100
 
 // static keyword (access property without creating an object)
 // We use static keyword for shared properties, utility functions, memory efficiency & performance
-class Person{
-    static firstName = 'John'
-    static lastName = 'Smith'
-    static getName(){
-        return `My name is ${this.firstName} ${this.lastName}`;
-    }
-}
+// class Person{
+//     static firstName = 'John'
+//     static lastName = 'Smith'
+//     static getName(){
+//         return `My name is ${this.firstName} ${this.lastName}`;
+//     }
+// }
 // Without static method
-let personObj = new Person();
+// let personObj = new Person();
 // console.log(personObj.getName()); // My name is John Smith
 
 // With static method
-console.log(Person.firstName); // John
-console.log(Person.lastName); // Smith
-console.log(Person.getName()); // My name is John Smith
+// console.log(Person.firstName); // John
+// console.log(Person.lastName); // Smith
+// console.log(Person.getName()); // My name is John Smith
 
 // Inheritence
+// class Father{
+//     num1 = 10;
+//     num2 = 20;
+//     addNum(){
+//         let sum = this.num1 + this.num2;
+//         console.log(sum);
+//     }
+// }
+
+// class Son extends Father{
+
+// }
+
+// let sonObj = new Son();
+// console.log(sonObj); // Son { num1: 10, num2: 20 }
+// console.log(sonObj.num1); // 10
+// sonObj.addNum(); // 30
+
+// let FatherObj = new Father();
+// console.log(FatherObj); 
+// console.log(FatherObj.num1); // 10
+// FatherObj.addNum(); // 30 
+
+// Inheritance constructor
+ 
+// 1. Constructor inside only parent class
+// 2. Constructor inside only parent class pass parameters
+// class Father{
+//     constructor(msg){
+//         console.log(msg);
+        
+//     }
+// }
+
+// class Son extends Father{
+
+// }
+// new Father(); // I am a constructor of Father class
+// new Son(); // I am a constructor of Father class
+// new Father('This is constructor parameter from Father'); // This is constructor parameter from Father
+// new Son('This is constructor parameter from Son'); // This is constructor parameter from Son
+
+// 3. Constructor inside only child class
+// 4. Constructor inside only child class pass parameters
+// class Father{
+
+// }
+// class Son extends Father{
+//     constructor(msg){
+//         super()
+//         // console.log('I am a constructor of Son class');
+//         console.log(msg);
+//     }
+// }
+// new Father(); // error
+// new Son(); // I am a constructor of Son class 
+// new Son('This is constructor parameter from Son class'); 
+
+// 5. Constructor inside both parent and child class
+// 6. Constructor inside only both parent and child class
 class Father{
-    num1 = 10;
-    num2 = 20;
-    addNum(){
-        let sum = this.num1 + this.num2;
-        console.log(sum);
+    constructor(msgFather){
+        console.log(msgFather);
     }
 }
-
 class Son extends Father{
-
+    constructor(msgSon){
+        super();
+        console.log(msgSon);
+    }
 }
-
-let sonObj = new Son();
-console.log(sonObj); // Son { num1: 10, num2: 20 }
-console.log(sonObj.num1); // 10
-sonObj.addNum(); // 30
-
-let FatherObj = new Father();
-console.log(FatherObj); 
-console.log(FatherObj.num1); // 10
-FatherObj.addNum(); // 30 
-
+// new Father(); // I am Father constructor
+// new Son(); /* I am Father constructor \nI am a Son constructor */
+new Father('msg parameter form Father constructor'); // msg parameter form Father constructor
+new Son('msg parameter form Son constructor'); // undefined \nmsg parameter form Son constructor
 
